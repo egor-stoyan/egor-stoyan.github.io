@@ -2,10 +2,12 @@
 
 
 /* =========================
-   SPACING SYSTEM
+   COLORS + SPACING
    ========================= */
 
 :root {
+    --accent: #d36abb;
+
     --section-gap: 44px;
     --subsection-gap: 12px;
     --item-gap: 6px;
@@ -55,9 +57,6 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-
-/* Name */
 
 .site-name {
     color: #e9e7e2;
@@ -111,7 +110,7 @@ body {
 }
 
 .navbar-links-container .current-page {
-    color: rgb(196, 10, 156);
+    color: var(--accent);
     font-weight: 500;
 }
 
@@ -163,7 +162,7 @@ p {
    ========================= */
 
 a {
-    color: #a8c3b0;
+    color: var(--accent);
     text-decoration: none;
 }
 
@@ -181,9 +180,6 @@ a:hover {
     margin: 0;
 }
 
-
-/* Welcome + Caltech */
-
 .intro-line {
     margin-bottom: var(--item-gap);
 }
@@ -191,15 +187,13 @@ a:hover {
 .welcome-inline {
     display: block;
 
-    color: rgb(196, 10, 156);
+    color: var(--accent);
+
     font-weight: 500;
     font-size: 1.15em;
 
     margin-bottom: var(--tight-gap);
 }
-
-
-/* Profile rows */
 
 .profile-row {
     margin-bottom: var(--item-gap);
@@ -210,7 +204,7 @@ a:hover {
 }
 
 .profile-label {
-    color: rgb(196, 10, 156);
+    color: var(--accent);
     font-weight: 500;
 }
 
@@ -227,7 +221,7 @@ a:hover {
 /* CV */
 
 .cv-link {
-    color: rgb(196, 10, 156);
+    color: var(--accent);
     font-weight: 500;
 }
 
@@ -240,7 +234,7 @@ a:hover {
 /* Email */
 
 .email-highlight {
-    color: rgb(196, 10, 156);
+    color: var(--accent);
     font-weight: 500;
 }
 
@@ -260,7 +254,7 @@ a:hover {
 .research-label {
     display: block;
 
-    color: rgb(196, 10, 156);
+    color: var(--accent);
 
     font-weight: 500;
     font-size: 1.08em;
@@ -274,7 +268,7 @@ a:hover {
    ========================= */
 
 .subsection-heading {
-    color: #d36abb;
+    color: var(--accent);
 
     font-weight: 500;
     font-size: 1em;
@@ -330,7 +324,7 @@ a:hover {
 .teaching-label {
     display: block;
 
-    color: rgb(196, 10, 156);
+    color: var(--accent);
 
     font-weight: 500;
     font-size: 1.08em;
@@ -375,9 +369,6 @@ a:hover {
     transform-origin: top center;
 }
 
-
-/* Feedback text */
-
 .feedback-quote {
     color: #e9e7e2;
 
@@ -388,7 +379,7 @@ a:hover {
 }
 
 
-/* Course information — bottom left */
+/* Course — bottom left */
 
 .feedback-course {
     position: absolute;
@@ -420,7 +411,7 @@ a:hover {
     outline: none;
     background: none;
 
-    color: rgb(196, 10, 156);
+    color: var(--accent);
 
     font-family: 'Montserrat', sans-serif;
     font-size: 0.86em;
@@ -432,7 +423,7 @@ a:hover {
 }
 
 .feedback-next:hover {
-    color: #d36abb;
+    color: #ffffff;
 }
 
 .feedback-next:focus-visible {
@@ -441,7 +432,7 @@ a:hover {
 
 
 /* =========================
-   CALENDAR FLIP ANIMATION
+   FLIP ANIMATION
    ========================= */
 
 .feedback-card.flip-out {
@@ -509,12 +500,12 @@ a:hover {
 }
 
 .cv-download a {
-    color: #d36abb;
+    color: var(--accent);
     font-weight: 500;
 }
 
 .cv-download a:hover {
-    color: rgb(196, 10, 156);
+    color: #ffffff;
 }
 
 
@@ -542,7 +533,11 @@ a:hover {
 }
 
 
-/* Mobile CV is hidden on desktop */
+/*
+   IMPORTANT:
+   Mobile CV block is always hidden by default.
+   It is enabled ONLY in the phone media query below.
+*/
 
 .cv-mobile-view {
     display: none;
@@ -554,12 +549,12 @@ a:hover {
    ========================= */
 
 .highlighted-email {
-    color: rgb(196, 10, 156);
+    color: var(--accent);
 }
 
 .news-heading {
     margin-top: var(--section-gap);
-    color: rgb(196, 10, 156);
+    color: var(--accent);
 }
 
 
@@ -623,7 +618,7 @@ a:hover {
     }
 
 
-    /* Main content */
+    /* Main */
 
     .container {
         width: 100%;
@@ -675,98 +670,25 @@ a:hover {
     }
 
 
-    /* =========================
-       CV — MOBILE / TABLET
-       ========================= */
+    /*
+       CV remains the normal embedded PDF
+       on tablets / small desktop windows.
+    */
 
     .cv-page {
         width: 100%;
-        max-width: 600px;
+        max-width: 1100px;
 
-        height: auto;
+        height: calc(100vh - 180px);
 
         margin: 0 auto;
-        padding: 10px 24px 40px 24px;
+        padding: 0 24px 30px 24px;
 
         box-sizing: border-box;
-
-        display: block;
     }
-
-
-    /* Hide embedded PDF */
-
-    .cv-pdf-container {
-        display: none;
-    }
-
-
-    /* Hide desktop download line */
-
-    .cv-download {
-        display: none;
-    }
-
-
-    /* Show mobile viewer */
 
     .cv-mobile-view {
-        display: block;
-
-        width: 100%;
-
-        padding: 26px 24px;
-
-        box-sizing: border-box;
-
-        background-color: #242a26;
-
-        border: 1px solid #3b423d;
-        border-radius: 8px;
-
-        text-align: center;
-    }
-
-    .cv-mobile-text {
-        margin: 0 0 20px 0;
-
-        color: #e9e7e2;
-
-        font-size: 0.96em;
-        line-height: 1.55;
-    }
-
-    .cv-mobile-button {
-        display: inline-flex;
-
-        align-items: center;
-        justify-content: center;
-
-        min-height: 44px;
-
-        padding: 0 22px;
-
-        box-sizing: border-box;
-
-        color: rgb(196, 10, 156);
-
-        border: 1px solid rgb(196, 10, 156);
-        border-radius: 6px;
-
-        font-size: 0.95em;
-        font-weight: 500;
-
-        text-decoration: none;
-
-        transition:
-            color 0.2s ease,
-            border-color 0.2s ease;
-    }
-
-    .cv-mobile-button:hover {
-        color: #d36abb;
-        border-color: #d36abb;
-        text-decoration: none;
+        display: none;
     }
 }
 
@@ -810,7 +732,7 @@ a:hover {
     }
 
 
-    /* Main page */
+    /* Main */
 
     .container {
         padding-left: 18px;
@@ -856,7 +778,7 @@ a:hover {
     }
 
 
-    /* Teaching feedback */
+    /* Feedback */
 
     .feedback-wrapper {
         width: 100%;
@@ -890,19 +812,98 @@ a:hover {
     }
 
 
-    /* CV */
+    /* =========================
+       CV — PHONE ONLY
+       ========================= */
 
     .cv-page {
+        width: 100%;
+        max-width: 600px;
+
+        height: auto;
+
+        margin: 0 auto;
+
         padding-left: 18px;
         padding-right: 18px;
         padding-bottom: 30px;
+
+        box-sizing: border-box;
+
+        display: block;
     }
 
+
+    /* Hide desktop PDF on phone */
+
+    .cv-pdf-container {
+        display: none;
+    }
+
+    .cv-download {
+        display: none;
+    }
+
+
+    /* Show mobile CV button */
+
     .cv-mobile-view {
+        display: block;
+
+        width: 100%;
+
         padding: 24px 18px;
+
+        box-sizing: border-box;
+
+        background-color: #242a26;
+
+        border: 1px solid #3b423d;
+        border-radius: 8px;
+
+        text-align: center;
+    }
+
+    .cv-mobile-text {
+        margin: 0 0 20px 0;
+
+        color: #e9e7e2;
+
+        font-size: 0.96em;
+        line-height: 1.55;
     }
 
     .cv-mobile-button {
+        display: inline-flex;
+
         width: 100%;
+        min-height: 44px;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 0 22px;
+
+        box-sizing: border-box;
+
+        color: var(--accent);
+
+        border: 1px solid var(--accent);
+        border-radius: 6px;
+
+        font-size: 0.95em;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .cv-mobile-button:hover {
+        color: #ffffff;
+        border-color: #ffffff;
+        text-decoration: none;
     }
 }
