@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Egor Stoyan</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header class="site-header">
+
+        <div class="site-name">
+            Egor Stoyan
+        </div>
+
+        <nav class="navbar-links-container">
+
+            <a href="/" class="current-page">
+                About
+            </a>
+
+            <a href="cv.html">
+                CV
+            </a>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE CONTENT
+         ========================= -->
+
+    <div class="page-container">
+
+        <div class="container">
+
+            <div class="image">
+                <img
+                    src="images/your_image.jpg"
+                    alt="Egor Stoyan"
+                    width="570"
+                    height="380">
+            </div>
+
+            <div class="text">
+
+
+                <!-- =========================
+                     PROFILE
+                     ========================= -->
+
+                <div class="profile-section">
+
+                    <p class="intro-line">
+                        <span class="welcome-inline">Welcome!</span>
+                        I am a graduate student at Caltech.
+                    </p>
+
+                    <p class="profile-row">
+                        <span class="profile-label">Research Interests:</span>
+                        experimental economics and game theory
+                    </p>
+
+                    <p class="profile-row">
+                        <span class="profile-label">CV:</span>
+                        <a class="cv-link" href="cv.html">Curriculum Vitae</a>
+                    </p>
+
+                    <p class="profile-row">
+                        <span class="profile-label">Email:</span>
+                        estoyan@caltech.edu
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     RESEARCH
+                     ========================= -->
+
+                <div class="research-section">
+
+                    <p class="research-line">
+                        <span class="research-label">Research:</span>
+                        Most of my work applies economic methods to problems in operations research.
+                    </p>
+
+                    <p class="subsection-heading">
+                        Completed Papers
+                    </p>
+
+                    <div class="paper">
+                        <span class="paper-title">
+                            Patrolling Game: An Experimental Study
+                        </span>
+                        <span class="paper-note">
+                            submitted
+                        </span>
+                    </div>
+
+                    <p class="subsection-heading working-heading">
+                        Working Papers
+                    </p>
+
+                    <div class="paper">
+                        <span class="paper-title">
+                            Coordination Without Shared Meanings: Experimental Evidence from the Rendezvous Problem
+                        </span>
+                        <span class="paper-note">
+                            (JMP)
+                        </span>
+                    </div>
+
+                    <div class="paper">
+                        <span class="paper-title">
+                            Supervised Learning: An Experimental Study
+                        </span>
+                        <span class="paper-note">
+                            (with Marina Agranov)
+                        </span>
+                    </div>
+
+                    <div class="paper">
+                        <span class="paper-title">
+                            Failing to Plan or Planning to Fail? A Study on Commitment Failure
+                        </span>
+                        <span class="paper-note">
+                            (with Polina Detkova)
+                        </span>
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     TEACHING
+                     ========================= -->
+
+                <div class="teaching-section">
+
+                    <p class="teaching-line">
+                        <span class="teaching-label">Teaching:</span>
+                        I have TA'd many wonderful students at Caltech, and here I share all
+                        (absolutely all) of the anonymous comments they left about me at the end
+                        of their courses. I will continue updating this section.
+                    </p>
+
+                    <div class="feedback-wrapper">
+
+                        <div class="feedback-card" id="feedback-card">
+
+                            <div class="feedback-quote" id="feedback-quote">
+                                “Egor was a great TA and was very helpful during office hours.
+                                I thought the grading for sets and the final was very fair.”
+                            </div>
+
+                            <div class="feedback-course" id="feedback-course">
+                                Econometrics (Fall 2023)
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         FEEDBACK ROTATION
+         ========================= -->
+
+    <script>
+
+        const feedbacks = [
+
+            {
+                quote: "Egor was a great TA and was very helpful during office hours. I thought the grading for sets and the final was very fair.",
+                course: "Econometrics (Fall 2023)"
+            },
+
+            {
+                quote: "when taking points off on an assignment, maybe explain why you are taking points off rather just doing it.",
+                course: "Introduction to Economics (Winter 2025)"
+            }
+
+        ];
+
+
+        let currentFeedback = 0;
+
+        const feedbackCard =
+            document.getElementById("feedback-card");
+
+        const feedbackQuote =
+            document.getElementById("feedback-quote");
+
+        const feedbackCourse =
+            document.getElementById("feedback-course");
+
+
+        function showNextFeedback() {
+
+            feedbackCard.classList.add("flip-out");
+
+            setTimeout(function () {
+
+                currentFeedback =
+                    (currentFeedback + 1) % feedbacks.length;
+
+                feedbackQuote.textContent =
+                    "“" + feedbacks[currentFeedback].quote + "”";
+
+                feedbackCourse.textContent =
+                    feedbacks[currentFeedback].course;
+
+                feedbackCard.classList.remove("flip-out");
+                feedbackCard.classList.add("flip-in");
+
+                setTimeout(function () {
+                    feedbackCard.classList.remove("flip-in");
+                }, 450);
+
+            }, 450);
+        }
+
+
+        setInterval(showNextFeedback, 40000);
+
+    </script>
+
+</body>
+</html>

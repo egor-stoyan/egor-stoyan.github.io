@@ -1,0 +1,524 @@
+/* myapp/static/myapp/css/styles.css */
+
+
+/* =========================
+   SPACING SYSTEM
+   ========================= */
+
+:root {
+    --section-gap: 44px;
+    --subsection-gap: 12px;
+    --item-gap: 6px;
+    --tight-gap: 4px;
+}
+
+
+/* =========================
+   GENERAL PAGE STYLES
+   ========================= */
+
+body {
+    background-color: #1c211e;
+    color: #e9e7e2;
+
+    margin: 0;
+
+    font-family: 'Montserrat', sans-serif;
+}
+
+.page-container {
+    margin-top: 0;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    margin-left: 30px;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.site-header {
+    position: relative;
+
+    width: calc(100% - 60px);
+    max-width: 1530px;
+
+    min-height: 48px;
+
+    margin: 62px auto 24px auto;
+    padding: 0 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Name */
+
+.site-name {
+    color: #e9e7e2;
+
+    font-size: 1.98em;
+    font-weight: 500;
+
+    letter-spacing: 1.2px;
+    line-height: 1;
+
+    text-align: center;
+}
+
+
+/* About / CV */
+
+.navbar-links-container {
+    position: absolute;
+
+    right: 20px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.navbar-links-container a {
+    color: #e9e7e2;
+
+    margin: 0;
+    padding: 0;
+
+    text-decoration: none;
+
+    font-size: 1.05em;
+    font-weight: 400;
+
+    line-height: 1;
+    letter-spacing: 0.5px;
+
+    transition: color 0.3s;
+}
+
+.navbar-links-container a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.navbar-links-container .current-page {
+    color: rgb(196, 10, 156);
+    font-weight: 500;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+   ========================= */
+
+.container {
+    padding: 32px 20px 40px 20px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    max-width: 1530px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   IMAGE
+   ========================= */
+
+.image {
+    margin-right: 30px;
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   MAIN TEXT
+   ========================= */
+
+.text {
+    max-width: 890px;
+    flex: 1;
+}
+
+p {
+    margin: 0;
+    line-height: 1.55;
+}
+
+
+/* =========================
+   LINKS
+   ========================= */
+
+a {
+    color: #a8c3b0;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+
+/* =========================
+   PROFILE SECTION
+   ========================= */
+
+.profile-section {
+    margin: 0;
+}
+
+.intro-line {
+    margin-bottom: var(--item-gap);
+}
+
+.welcome-inline {
+    color: rgb(196, 10, 156);
+
+    font-weight: 500;
+    font-size: 1.15em;
+
+    margin-right: 4px;
+}
+
+.profile-row {
+    margin-bottom: var(--item-gap);
+}
+
+.profile-row:last-child {
+    margin-bottom: 0;
+}
+
+.profile-label {
+    color: rgb(196, 10, 156);
+    font-weight: 500;
+}
+
+.cv-link {
+    color: #d36abb;
+}
+
+.cv-link:hover {
+    color: rgb(196, 10, 156);
+    text-decoration: underline;
+}
+
+
+/* =========================
+   RESEARCH SECTION
+   ========================= */
+
+.research-section {
+    margin-top: var(--section-gap);
+}
+
+.research-line {
+    margin-bottom: var(--subsection-gap);
+}
+
+.research-label {
+    color: rgb(196, 10, 156);
+
+    font-weight: 500;
+    font-size: 1.08em;
+}
+
+
+/* =========================
+   RESEARCH SUBSECTIONS
+   ========================= */
+
+.subsection-heading {
+    color: #d36abb;
+
+    font-weight: 500;
+    font-size: 1em;
+
+    margin-top: 0;
+    margin-bottom: var(--tight-gap);
+}
+
+.working-heading {
+    margin-top: var(--subsection-gap);
+}
+
+
+/* =========================
+   PAPERS
+   ========================= */
+
+.paper {
+    margin-bottom: var(--item-gap);
+    line-height: 1.5;
+}
+
+.paper-title {
+    color: #e9e7e2;
+    font-weight: 400;
+}
+
+.paper-note {
+    color: #e9e7e2;
+
+    font-style: italic;
+
+    margin-left: 5px;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   TEACHING SECTION
+   ========================= */
+
+.teaching-section {
+    margin-top: var(--section-gap);
+    width: 100%;
+}
+
+.teaching-line {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.teaching-label {
+    color: rgb(196, 10, 156);
+
+    font-weight: 500;
+    font-size: 1.08em;
+}
+
+
+/* =========================
+   TEACHING FEEDBACK CARD
+   ========================= */
+
+.feedback-wrapper {
+    width: 94%;
+
+    margin-top: var(--subsection-gap);
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    perspective: 1200px;
+}
+
+.feedback-card {
+    position: relative;
+
+    width: 100%;
+    min-height: 110px;
+
+    padding: 18px 24px 36px 24px;
+
+    background-color: #242a26;
+
+    border: 1px solid #3b423d;
+    border-radius: 8px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 22px rgba(0, 0, 0, 0.18);
+
+    transform-origin: top center;
+}
+
+
+/* Feedback text */
+
+.feedback-quote {
+    color: #e9e7e2;
+
+    font-size: 0.98em;
+    font-weight: 400;
+
+    line-height: 1.6;
+}
+
+
+/* Course information */
+
+.feedback-course {
+    position: absolute;
+
+    right: 20px;
+    bottom: 11px;
+
+    color: #e9e7e2;
+
+    font-size: 0.82em;
+    font-style: italic;
+
+    white-space: nowrap;
+}
+
+
+/* =========================
+   CALENDAR FLIP ANIMATION
+   ========================= */
+
+.feedback-card.flip-out {
+    animation: flipOut 0.45s ease-in forwards;
+}
+
+.feedback-card.flip-in {
+    animation: flipIn 0.45s ease-out forwards;
+}
+
+@keyframes flipOut {
+
+    from {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+}
+
+@keyframes flipIn {
+
+    from {
+        transform: rotateX(90deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   CV PAGE
+   ========================= */
+
+.cv-page {
+    max-width: 1100px;
+
+    height: calc(100vh - 190px);
+
+    margin: 0 auto;
+    padding: 8px 20px 16px 20px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Download line */
+
+.cv-download {
+    margin: 0 0 12px 0;
+
+    font-size: 1em;
+
+    flex-shrink: 0;
+}
+
+.cv-download a {
+    color: #d36abb;
+    font-weight: 500;
+}
+
+.cv-download a:hover {
+    color: rgb(196, 10, 156);
+}
+
+
+/* PDF */
+
+.cv-pdf-container {
+    width: 100%;
+
+    flex: 1;
+    min-height: 0;
+}
+
+.cv-pdf {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid #3b423d;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+}
+
+
+/* =========================
+   OTHER HIGHLIGHTS
+   ========================= */
+
+.highlighted-email {
+    color: rgb(196, 10, 156);
+}
+
+.news-heading {
+    margin-top: var(--section-gap);
+    color: rgb(196, 10, 156);
+}
+
+
+/* =========================
+   SMALLER SCREENS
+   ========================= */
+
+@media (max-width: 900px) {
+
+    .site-header {
+        justify-content: flex-start;
+    }
+
+    .site-name {
+        font-size: 1.7em;
+    }
+
+    .navbar-links-container {
+        right: 20px;
+        gap: 20px;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .image {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .feedback-wrapper {
+        width: 100%;
+    }
+
+    .cv-page {
+        height: calc(100vh - 180px);
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
