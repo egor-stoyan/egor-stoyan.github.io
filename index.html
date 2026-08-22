@@ -73,22 +73,30 @@
 
                     <p class="intro-line">
                         <span class="welcome-inline">Welcome!</span>
-                        I am a graduate student at Caltech.
+                        <span class="profile-value-block">
+                            I am a graduate student at Caltech.
+                        </span>
                     </p>
 
                     <p class="profile-row">
-                        <span class="profile-label">Research Interests:</span>
-                        experimental economics and game theory
+                        <span class="profile-label profile-label-block">
+                            Research Interests:
+                        </span>
+                        <span class="profile-value-block">
+                            experimental economics and game theory
+                        </span>
                     </p>
 
                     <p class="profile-row">
-                        <span class="profile-label">CV:</span>
-                        <a class="cv-link" href="cv.html">Curriculum Vitae</a>
+                        <a class="cv-link" href="cv.html">
+                            Curriculum Vitae
+                        </a>
                     </p>
 
                     <p class="profile-row">
-                        <span class="profile-label">Email:</span>
-                        estoyan@caltech.edu
+                        <span class="email-highlight">
+                            estoyan@caltech.edu
+                        </span>
                     </p>
 
                 </div>
@@ -178,6 +186,13 @@
                                 Econometrics (Fall 2023)
                             </div>
 
+                            <button
+                                class="feedback-next"
+                                id="feedback-next"
+                                type="button">
+                                Next →
+                            </button>
+
                         </div>
 
                     </div>
@@ -213,6 +228,8 @@
 
 
         let currentFeedback = 0;
+        let isFlipping = false;
+
 
         const feedbackCard =
             document.getElementById("feedback-card");
@@ -223,10 +240,20 @@
         const feedbackCourse =
             document.getElementById("feedback-course");
 
+        const feedbackNext =
+            document.getElementById("feedback-next");
+
 
         function showNextFeedback() {
 
+            if (isFlipping) {
+                return;
+            }
+
+            isFlipping = true;
+
             feedbackCard.classList.add("flip-out");
+
 
             setTimeout(function () {
 
@@ -242,15 +269,32 @@
                 feedbackCard.classList.remove("flip-out");
                 feedbackCard.classList.add("flip-in");
 
+
                 setTimeout(function () {
+
                     feedbackCard.classList.remove("flip-in");
+                    isFlipping = false;
+
                 }, 450);
 
             }, 450);
         }
 
 
-        setInterval(showNextFeedback, 40000);
+        let feedbackTimer =
+            setInterval(showNextFeedback, 40000);
+
+
+        feedbackNext.addEventListener("click", function () {
+
+            clearInterval(feedbackTimer);
+
+            showNextFeedback();
+
+            feedbackTimer =
+                setInterval(showNextFeedback, 40000);
+
+        });
 
     </script>
 

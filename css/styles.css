@@ -1,4 +1,4 @@
-/* myapp/static/myapp/css/styles.css */
+/* static_site/css/styles.css */
 
 
 /* =========================
@@ -149,6 +149,7 @@ body {
 .text {
     max-width: 890px;
     flex: 1;
+    min-width: 0;
 }
 
 p {
@@ -180,18 +181,25 @@ a:hover {
     margin: 0;
 }
 
+
+/* Welcome + Caltech */
+
 .intro-line {
     margin-bottom: var(--item-gap);
 }
 
 .welcome-inline {
-    color: rgb(196, 10, 156);
+    display: block;
 
+    color: rgb(196, 10, 156);
     font-weight: 500;
     font-size: 1.15em;
 
-    margin-right: 4px;
+    margin-bottom: var(--tight-gap);
 }
+
+
+/* Profile rows */
 
 .profile-row {
     margin-bottom: var(--item-gap);
@@ -206,13 +214,34 @@ a:hover {
     font-weight: 500;
 }
 
+.profile-label-block {
+    display: block;
+    margin-bottom: var(--tight-gap);
+}
+
+.profile-value-block {
+    display: block;
+}
+
+
+/* CV */
+
 .cv-link {
-    color: #d36abb;
+    color: rgb(196, 10, 156);
+    font-weight: 500;
 }
 
 .cv-link:hover {
-    color: rgb(196, 10, 156);
+    color: #ffffff;
     text-decoration: underline;
+}
+
+
+/* Email */
+
+.email-highlight {
+    color: rgb(196, 10, 156);
+    font-weight: 500;
 }
 
 
@@ -229,10 +258,14 @@ a:hover {
 }
 
 .research-label {
+    display: block;
+
     color: rgb(196, 10, 156);
 
     font-weight: 500;
     font-size: 1.08em;
+
+    margin-bottom: var(--tight-gap);
 }
 
 
@@ -295,10 +328,14 @@ a:hover {
 }
 
 .teaching-label {
+    display: block;
+
     color: rgb(196, 10, 156);
 
     font-weight: 500;
     font-size: 1.08em;
+
+    margin-bottom: var(--tight-gap);
 }
 
 
@@ -323,7 +360,7 @@ a:hover {
     width: 100%;
     min-height: 110px;
 
-    padding: 18px 24px 36px 24px;
+    padding: 18px 24px 38px 24px;
 
     background-color: #242a26;
 
@@ -351,12 +388,12 @@ a:hover {
 }
 
 
-/* Course information */
+/* Course information — bottom left */
 
 .feedback-course {
     position: absolute;
 
-    right: 20px;
+    left: 20px;
     bottom: 11px;
 
     color: #e9e7e2;
@@ -365,6 +402,41 @@ a:hover {
     font-style: italic;
 
     white-space: nowrap;
+}
+
+
+/* Next — bottom right */
+
+.feedback-next {
+    position: absolute;
+
+    right: 20px;
+    bottom: 9px;
+
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    outline: none;
+    background: none;
+
+    color: rgb(196, 10, 156);
+
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.86em;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: color 0.2s ease;
+}
+
+.feedback-next:hover {
+    color: #d36abb;
+}
+
+.feedback-next:focus-visible {
+    text-decoration: underline;
 }
 
 
@@ -408,7 +480,7 @@ a:hover {
 
 
 /* =========================
-   CV PAGE
+   CV PAGE — DESKTOP
    ========================= */
 
 .cv-page {
@@ -446,7 +518,7 @@ a:hover {
 }
 
 
-/* PDF */
+/* Embedded PDF */
 
 .cv-pdf-container {
     width: 100%;
@@ -470,6 +542,13 @@ a:hover {
 }
 
 
+/* Mobile CV is hidden on desktop */
+
+.cv-mobile-view {
+    display: none;
+}
+
+
 /* =========================
    OTHER HIGHLIGHTS
    ========================= */
@@ -484,41 +563,346 @@ a:hover {
 }
 
 
-/* =========================
-   SMALLER SCREENS
-   ========================= */
+/* =========================================================
+   TABLETS / SMALLER SCREENS
+   ========================================================= */
 
 @media (max-width: 900px) {
 
+    body {
+        overflow-x: hidden;
+    }
+
+    .page-container {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 25px;
+    }
+
+
+    /* Header */
+
     .site-header {
-        justify-content: flex-start;
-    }
+        position: relative;
 
-    .site-name {
-        font-size: 1.7em;
-    }
+        width: 100%;
+        max-width: none;
+        min-height: 0;
 
-    .navbar-links-container {
-        right: 20px;
+        margin: 40px 0 30px 0;
+        padding: 0 24px;
+
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
         gap: 20px;
     }
 
-    .container {
-        flex-direction: column;
+    .site-name {
+        font-size: 1.85em;
+        text-align: center;
     }
 
-    .image {
-        margin-right: 0;
-        margin-bottom: 30px;
+    .navbar-links-container {
+        position: static;
+
+        right: auto;
+        top: auto;
+
+        transform: none;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        gap: 32px;
     }
+
+
+    /* Main content */
+
+    .container {
+        width: 100%;
+        max-width: none;
+
+        padding: 0 24px 35px 24px;
+
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    /* Image */
+
+    .image {
+        width: 100%;
+
+        margin: 0 0 30px 0;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .image img {
+        width: 100%;
+        max-width: 570px;
+        height: auto;
+
+        display: block;
+    }
+
+
+    /* Text */
+
+    .text {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+    }
+
+
+    /* Feedback */
 
     .feedback-wrapper {
         width: 100%;
     }
 
+
+    /* =========================
+       CV — MOBILE / TABLET
+       ========================= */
+
     .cv-page {
-        height: calc(100vh - 180px);
-        padding-left: 0;
-        padding-right: 0;
+        width: 100%;
+        max-width: 600px;
+
+        height: auto;
+
+        margin: 0 auto;
+        padding: 10px 24px 40px 24px;
+
+        box-sizing: border-box;
+
+        display: block;
+    }
+
+
+    /* Hide embedded PDF */
+
+    .cv-pdf-container {
+        display: none;
+    }
+
+
+    /* Hide desktop download line */
+
+    .cv-download {
+        display: none;
+    }
+
+
+    /* Show mobile viewer */
+
+    .cv-mobile-view {
+        display: block;
+
+        width: 100%;
+
+        padding: 26px 24px;
+
+        box-sizing: border-box;
+
+        background-color: #242a26;
+
+        border: 1px solid #3b423d;
+        border-radius: 8px;
+
+        text-align: center;
+    }
+
+    .cv-mobile-text {
+        margin: 0 0 20px 0;
+
+        color: #e9e7e2;
+
+        font-size: 0.96em;
+        line-height: 1.55;
+    }
+
+    .cv-mobile-button {
+        display: inline-flex;
+
+        align-items: center;
+        justify-content: center;
+
+        min-height: 44px;
+
+        padding: 0 22px;
+
+        box-sizing: border-box;
+
+        color: rgb(196, 10, 156);
+
+        border: 1px solid rgb(196, 10, 156);
+        border-radius: 6px;
+
+        font-size: 0.95em;
+        font-weight: 500;
+
+        text-decoration: none;
+
+        transition:
+            color 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .cv-mobile-button:hover {
+        color: #d36abb;
+        border-color: #d36abb;
+        text-decoration: none;
+    }
+}
+
+
+/* =========================================================
+   PHONES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    :root {
+        --section-gap: 34px;
+        --subsection-gap: 10px;
+        --item-gap: 6px;
+        --tight-gap: 4px;
+    }
+
+
+    /* Header */
+
+    .site-header {
+        margin-top: 32px;
+        margin-bottom: 28px;
+
+        padding-left: 18px;
+        padding-right: 18px;
+
+        gap: 18px;
+    }
+
+    .site-name {
+        font-size: 1.75em;
+    }
+
+    .navbar-links-container {
+        gap: 28px;
+    }
+
+    .navbar-links-container a {
+        font-size: 1em;
+    }
+
+
+    /* Main page */
+
+    .container {
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 30px;
+    }
+
+
+    /* Photo */
+
+    .image {
+        margin-bottom: 26px;
+    }
+
+    .image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* Typography */
+
+    .welcome-inline {
+        font-size: 1.12em;
+    }
+
+    .research-label,
+    .teaching-label {
+        font-size: 1.05em;
+    }
+
+
+    /* Papers */
+
+    .paper {
+        line-height: 1.55;
+    }
+
+    .paper-note {
+        white-space: normal;
+        margin-left: 4px;
+    }
+
+
+    /* Teaching feedback */
+
+    .feedback-wrapper {
+        width: 100%;
+    }
+
+    .feedback-card {
+        min-height: 125px;
+
+        padding: 16px 18px 42px 18px;
+    }
+
+    .feedback-quote {
+        font-size: 0.95em;
+        line-height: 1.55;
+    }
+
+    .feedback-course {
+        left: 18px;
+        bottom: 11px;
+
+        max-width: 65%;
+
+        font-size: 0.75em;
+
+        white-space: normal;
+    }
+
+    .feedback-next {
+        right: 18px;
+        bottom: 9px;
+    }
+
+
+    /* CV */
+
+    .cv-page {
+        padding-left: 18px;
+        padding-right: 18px;
+        padding-bottom: 30px;
+    }
+
+    .cv-mobile-view {
+        padding: 24px 18px;
+    }
+
+    .cv-mobile-button {
+        width: 100%;
     }
 }
