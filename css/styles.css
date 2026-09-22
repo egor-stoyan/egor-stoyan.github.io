@@ -217,6 +217,18 @@ a:hover {
     display: block;
 }
 
+/* Dissertation committee */
+
+.committee-links a {
+    color: var(--accent);
+    font-weight: 400;
+}
+
+.committee-links a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 
 /* CV */
 
